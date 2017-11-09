@@ -17,10 +17,16 @@ namespace WindowsFormsApp
         public Form1()
         {
             InitializeComponent();
-            
-            LoginResult result = FacebookService.Login("915609945259039", "public_profile", "user_photos", "publish_actions", "email");
+            LoginResult result = FacebookService.Login("915609945259039", "user_likes", "public_profile", "user_photos", "publish_actions", "email");
             FacebookWrapper.ObjectModel.User user = result.LoggedInUser;
+            Console.WriteLine();
+            Console.WriteLine(user.Id);
+            Console.WriteLine(result.AccessToken);
+            Console.WriteLine();
+        }
 
+        private void test()
+        {
         }
 
         private void Form1_Load(object sender, EventArgs e)
